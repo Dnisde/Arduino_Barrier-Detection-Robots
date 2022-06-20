@@ -56,6 +56,7 @@ As far as you have understand the works that you should do, I will starting to t
 Timer 0: 
  
 `TCCR0A = (1 << COM0A1) | (1 << COM0B1) | (1 << WGM01) | (1 << WGM00);`
+
 `TCCR0B = (1 << CS02) | (0 << CS01) | (1 << CS00);`
 
 **Explain: 
@@ -68,6 +69,7 @@ Timer 0:
 Timer 1: 
 
 `TCCR1A = 0;`
+
 `TCR1B = (1 << CS12) | (0 << CS11) | (0 << CS10);`
 
 **Explain:**
@@ -78,6 +80,7 @@ Timer 1:
 Timer 2: 
 
 `TCCR2A = (1 << COM2A1) |(1 << COM2B1) | (1 << WGM21) | (1 << WGM20);`
+
 `TCCR2B = (1 << CS22) | (1 << CS21) | (0 << CS20);`
   
 **Explain: **
