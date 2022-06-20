@@ -171,25 +171,24 @@ void obstacleV1(){
       obstacleV1();
     }
 
-//    if(( (LeftD < 25) || (RightD < 25) ) && (FrontD > 20)){
-//    /*--------------------------------------------------------
-//     * too close to the left wall and right wall, too !
-//     */
-//      OCR0A = 22;//16.38 * (22/256) = 1.5ms pulse, rectify the servo to initial point: FRONT
-//      delayfor(15);
-//      sensorTest();
-//      if(distance > 25){
-//        forward(CURRENTSPEEDA, CURRENTSPEEDB);
-//        delayfor(13);
-//        stoprunning();
-//        obstacleV1();
-//      }else{
-//        backward(CURRENTSPEEDA, CURRENTSPEEDB);
-//        delayfor(11);
-//        stoprunning();
-//        obstacleV1();
-//      }
-//    }
+   /* if(( (LeftD < 25) || (RightD < 25) ) && (FrontD > 20)) {
+     // Too close to the left wall and right wall, too !
+     OCR0A = 22;//16.38 * (22/256) = 1.5ms pulse, rectify the servo to initial point: FRONT
+     delayfor(15);
+     sensorTest();
+     if(distance > 25){
+       forward(CURRENTSPEEDA, CURRENTSPEEDB);
+       delayfor(13);
+       stoprunning();
+       obstacleV1();
+     }else{
+       backward(CURRENTSPEEDA, CURRENTSPEEDB);
+       delayfor(11);
+       stoprunning();
+       obstacleV1();
+     }
+   } 
+  */
 
     if((RightD < 25) && FrontD > 20){
     /*--------------------------------------------------------
@@ -353,7 +352,7 @@ void obstacleV1(){
       }
     }
 
-    else{/*--------------------------------After correcting the distance from the wall, try to run with after wall function*/
+    else {/*--------------------------------After correcting the distance from the wall, try to run with after wall function*/
       PORTB |= (1 << PORTB1);//TURN ON LED BOTH
       PORTB |= (1 << PORTB2);
       delayfor(20);
@@ -399,15 +398,19 @@ void obstacleV1(){
 
     }
 
-//    if((RightD > 20){// That represents no wall exist
-//        turnsBigright();// turn to Right at 90 degree
-//        delayfor(14);
-//        stoprunning();
-//        delayfor(20);
-//        forward(70, 150);
-//        delayfor(49);
-//        stoprunning();
-//      }
+   /* 
+   if((RightD > 20)
+   {
+   // If wall does not exist
+       turnsBigright();// turn to Right at 90 degree
+       delayfor(14);
+       stoprunning();
+       delayfor(20);
+       forward(70, 150);
+       delayfor(49);
+       stoprunning();
+    }
+    */
 
     if((RightD > 70) && (RightD < 400) && (LeftD > 100)){
     /*--------------------------------------------------
@@ -508,11 +511,11 @@ void obstacleV1(){
   }
 }
 
-
-//ISR(TIMER1_COMPA_vect){
-//  //stoprunning();
-//  Serial.println("Interrupt happens");
-//  TIFR1 |= (1 << TOV1);         // Clear Timer/Counter1, Output Compare A Match Flag by writing 1
-//  //PORTB |= (1 << PORTB2);//Red light turns on for detection
-//
-//}
+/* 
+ISR(TIMER1_COMPA_vect) {
+ //stoprunning();
+ Serial.println("Interrupt happens");
+ TIFR1 |= (1 << TOV1);         // Clear Timer/Counter1, Output Compare A Match Flag by writing 1
+ //PORTB |= (1 << PORTB2);//Red light turns on for detection
+}
+*/
